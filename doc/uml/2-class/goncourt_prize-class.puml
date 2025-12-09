@@ -1,0 +1,62 @@
+
+@startuml
+
+class Author {
+    - id_author : int
+    - name : str
+    - biography : txt
+}
+
+class Publisher {
+    - id_publisher : int
+    - name : str
+}
+
+class Book {
+    - id_book : int
+    - title : str
+    - summary : txt
+    - publication_date : date
+    - page_count : int
+    - isbn : str
+    - editor_price : float
+    - fk_id_author : int
+    - fk_id_publisher : int
+}
+
+class Personage {
+    - id_personage : int
+    - name : str
+}
+
+
+class Vote {
+    - id_vote : int
+    - fk_id_book : int
+    - vote_count : int
+}
+
+class Selection {
+    - id_selection : int
+    - selection_number : int
+    - selection_date : date
+}
+
+class JuryMember {
+    - id_jury_member : int
+    - name : str
+    - username : str
+    - password : str
+    - is_president : bool
+}
+
+' Relations
+Author "1" --> "0..n" Book
+Publisher "1" --> "0..n" Book
+
+Book "1" --> "0..n" Vote
+
+Book "0..n" <--> "0..n" Personage : Book_Personage
+Book "0..n" <--> "0..n" Selection : Selection_Book
+
+@enduml
