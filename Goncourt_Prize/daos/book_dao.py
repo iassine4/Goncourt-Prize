@@ -51,7 +51,7 @@ class BookDao(Dao[Book]):
         with Dao.connection.cursor() as cursor:
             cursor.execute(sql, (id_book,))
             row = cursor.fetchone()
-        return Book(**row) if row else None
+        return Book(*row) if row else None
 
     def update(self, book: Book) -> bool:
         """Met à jour en BD l'entité Book correspondant à book."""
@@ -113,7 +113,7 @@ class BookDao(Dao[Book]):
         with Dao.connection.cursor() as cursor:
             cursor.execute(sql)
             rows = cursor.fetchall()
-        return [Book(**row) for row in rows]
+        return [Book(*row) for row in rows]
 
     # ---------------------------------------
     # Requêtes spécifiques pour les sélections

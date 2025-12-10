@@ -1,0 +1,59 @@
+# --- Environnements virtuels ---
+venv/
+.venv/
+
+# --- Fichiers Python compilés ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Dossiers de build / distribution ---
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Outils IDE ---
+# PyCharm
+.idea/
+# VSCode
+.vscode/
+
+# --- Logs ---
+*.log
+
+# --- Fichiers de tests temporaires ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Configurations locales ---
+.env
+*.env
+.env.*
+
+# --- Base de données locale ---
+*.db
+*.sqlite
+*.sqlite3
+
+# --- UML et diagrammes générés ---
+*.png
+*.svg
+*.drawio
+*.puml
+
+# --- Fichiers temporaires généraux ---
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# --- Exclusions spécifiques au projet ---
+# Exports SQL
+exports_sql/
+*.sql
+
+# Fichiers de données générés par l'app console
+data/
