@@ -3,10 +3,12 @@ from Goncourt_Prize.models.author import Author
 
 author_dao = AuthorDao()
 
-# print("\n=== TEST READ ===")
-# author = author_dao.read(1)
-# print("Auteur ID 1 :", author)
-#
+print("\n=== TEST READ ===")
+author = author_dao.read(1)
+print("Auteur ID 1 :", author)
+
+#authors = author_dao.read_all()
+
 # print("\n=== TEST CREATE ===")
 # new_author = Author(id_author=None, name="Test DAO", biography="Ceci est un test")
 # new_id = author_dao.create(new_author)

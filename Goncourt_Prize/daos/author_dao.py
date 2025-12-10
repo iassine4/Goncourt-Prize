@@ -25,6 +25,9 @@ class AuthorDao(Dao[Author]):
 		with self.connection.cursor() as cursor:
 			cursor.execute(sql)
 			rows = cursor.fetchall()
+			print("DEBUG rows =", rows)
+			for r in rows:
+				print("TYPE row =", type(r), r)
 		return [Author(**row) for row in rows]
 
 	def read(self, id_author: int) -> Optional[Author]:
@@ -34,6 +37,8 @@ class AuthorDao(Dao[Author]):
 			row = cursor.fetchone()
 		if row is None:
 			return None
+		#print("DEBUG row =", row, type(row))
+		print("DEBUG dataclass fields =", Author.__annotations__)
 		return Author(**row)
 
 	def update(self, author: Author) -> bool:
