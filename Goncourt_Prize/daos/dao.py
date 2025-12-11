@@ -15,12 +15,11 @@ T = TypeVar("T")
 
 def get_connection() -> pymysql.Connection:
 
-	return pymysql.connect(host='localhost',
-					user='root',
-					password='',
-					database='goncourt2025',
+	return pymysql.connect(host="localhost",
+						user="goncourt_user",
+						password="ProjectGoncourPrize2025!!",
+						database="goncourt2025",
 					cursorclass=pymysql.cursors.DictCursor)
-
 
 @dataclass
 class Dao[T](ABC):
