@@ -20,6 +20,8 @@ President --> UC3 #line:blue;line.bold;
 President --> UC4 #line:blue;line.bold;
 President --> UC5 #line:blue;line.bold;
 
+President -> User
+
 UC5 <-- Auth #line:red;line.bold;text:red
 
 @enduml
