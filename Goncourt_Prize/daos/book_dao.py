@@ -101,7 +101,8 @@ class BookDao(Dao[Book]):
 	# Méthodes de recherche génériques
 	# ------------------------
 
-	def find_all(self) -> list[Book]:
+	@staticmethod
+	def find_all() -> list[Book]:
 		"""Renvoie la liste de tous les livres."""
 		sql = """
 			SELECT
@@ -119,7 +120,8 @@ class BookDao(Dao[Book]):
 	# Requêtes spécifiques pour les sélections
 	# ---------------------------------------
 
-	def find_by_selection_number(self, selection_number: int) -> list[Dict[str, Any]]:
+	@staticmethod
+	def find_by_selection_number(selection_number: int) -> list[Dict[str, Any]]:
 		"""
 		Renvoie tous les livres d'une sélection donnée (1, 2 ou 3),
 		avec les infos auteur, éditeur et la date de sélection.
@@ -171,7 +173,8 @@ class BookDao(Dao[Book]):
 		"""Raccourci pour la troisième sélection (3) = finalistes."""
 		return self.find_by_selection_number(3)
 
-	def find_finalists_with_votes(self) -> list[Dict[str, Any]]:
+	@staticmethod
+	def find_finalists_with_votes() -> list[Dict[str, Any]]:
 		"""
 		Renvoie les finalistes avec le nombre de voix obtenues
 		au dernier tour de scrutin.
