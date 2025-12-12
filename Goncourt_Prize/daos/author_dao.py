@@ -20,6 +20,7 @@ class AuthorDao(Dao[Author]):
 			self.connection.commit()
 			return cursor.lastrowid
 
+	@property
 	def read_all(self) -> list[Author]:
 		sql = "SELECT * FROM author"
 		with self.connection.cursor() as cursor:

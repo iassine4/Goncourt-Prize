@@ -41,7 +41,7 @@ class BookDao(Dao[Book]):
 
 	def read(self, id_book: int) -> Optional[Book]:
 		"""Renvoie le Book correspondant à id_book (ou None s'il n'existe pas)."""
-		sql = """
+		sql = "
 			SELECT
 				id_book, title, summary, publication_date, page_count,
 				isbn, editor_price, fk_id_author, fk_id_publisher
@@ -54,7 +54,7 @@ class BookDao(Dao[Book]):
 		return Book(**row) if row else None
 
 	def update(self, book: Book) -> bool:
-		"""Met à jour en BD l'entité Book correspondant à book."""
+		#Met à jour en BD l'entité Book correspondant à book."""
 		if book.id_book is None:
 			return False  # pas de mise à jour possible sans id
 

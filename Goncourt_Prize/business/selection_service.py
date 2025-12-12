@@ -104,6 +104,9 @@ class SelectionService:
 
         id_selection = selection.id_selection
 
+        if id_selection is None:
+            raise ValueError("La sélection doit avoir un identifiant id_selection avant la mise à jour de selection_book.")
+
         # 1) On supprime tout ce qui existait pour cette sélection
         self.selection_book_dao.delete_all_for_selection(id_selection)
 
@@ -115,7 +118,7 @@ class SelectionService:
 
     def add_single_book_to_selection(self, selection_number: int, id_book: int) -> bool:
         """
-        Ajoute un seul livre à une sélection (sans tout réécrire).
+        Ajoute un seul livre à une sélection.
         """
         selection: Optional[Selection] = self.selection_dao.get_by_number(selection_number)
         if selection is None:
