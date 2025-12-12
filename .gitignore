@@ -53,7 +53,7 @@ Thumbs.db
 # --- Exclusions spécifiques au projet ---
 # Exports SQL
 exports_sql/
-*.sql
+# *.sql
 
 # Fichiers de données générés par l'app console
 data/
