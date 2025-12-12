@@ -41,7 +41,7 @@ class BookDao(Dao[Book]):
 
 	def read(self, id_book: int) -> Optional[Book]:
 		"""Renvoie le Book correspondant à id_book (ou None s'il n'existe pas)."""
-		sql = "
+		sql = """
 			SELECT
 				id_book, title, summary, publication_date, page_count,
 				isbn, editor_price, fk_id_author, fk_id_publisher
