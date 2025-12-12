@@ -38,12 +38,6 @@ htmlcov/
 *.sqlite
 *.sqlite3
 
-# --- UML et diagrammes générés ---
-*.png
-*.svg
-*.drawio
-*.puml
-
 # --- Fichiers temporaires généraux ---
 *.tmp
 *.bak
